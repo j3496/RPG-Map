@@ -36,6 +36,12 @@ def Movement():
 	a = room.column + x
     b = room.row + y
     room.userpos = map[a][b]
+	if room.userpos == 0:
+		print("You've found an enemy")
+	elif room.userpos == 1:
+		print("Spawn room")
+	elif room.userpos == 2:
+		print("You've successfully escaped")
 
 
 def main():
