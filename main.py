@@ -3,7 +3,6 @@
 # 
 # 
 
-import menus
 import enemy
 Enemy = 0
 Spawn = 1
@@ -19,10 +18,10 @@ y=1
 Loop = True
 
 map = [
-	[3,0,3,0],
-	[2,1,3,3],
-	[3,0,0,3],
-	[0,3,0,0]
+	"Tile","Enemy","Tile","Enemy",
+	"Escape","Spawn","Tile","Tile",
+	"Tile","Enemy","Enemy","Tile",
+	"Enemy","Tile","Enemy","Enemy"
 ]
 
 
@@ -83,9 +82,15 @@ class Room(object):
 room = Room(0, 0)
 
 
+def Map1():
+	place = map
+	with open("map.txt", "a") as file:
+		file.write(f"{place}\n")
+
+
 def main():
 	"""lets you choose your inventory or to move around"""
-	inp = input("To move type 'move' \n to access your inventory type 'inventory' \n you can quit the game at any time by pressing Ctrl + c ")
+	inp = input("To move type 'move' \n to access your inventory type 'inventory' \n you can quit the game at any time by pressing Ctrl + c \n To see the map type map ")
 	if inp == "move":
 		Movement()
 	elif inp == "exit":
@@ -97,8 +102,10 @@ def main():
 		finally:
 			print("\n")
 			exit()
-
-
+	elif inp == "map":
+		"""prints the map to map.txt"""
+		Map1()
+		print("map printed to 'map.txt'")
 	elif inp == "inventory":
 		print(enemy.inventory)
 	else:
