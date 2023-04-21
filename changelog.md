@@ -13,3 +13,4 @@ added - enemy and enemy hp
 added - enemies can die
 added - player inventory
 added - a new way to quit
+added - a way to see the map

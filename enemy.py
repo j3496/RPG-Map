@@ -1,10 +1,10 @@
 import main
 
 
-inventory = []
 
 
-def enemy():
+
+def Enemy():
 	"""fighting an enemy"""
 	enemy_hp = 25
 	while (enemy_hp >= 1):
@@ -21,5 +21,5 @@ def enemy():
 			print("Your attack failed")	  
 	if enemy_hp <= 0:
 		print("You've killed the enemy\n You got a object")
-		inventory.append("object")
+		main.inventory.append("object")
 		main.main()

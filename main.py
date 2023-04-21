@@ -3,25 +3,56 @@
 # 
 # 
 
-import enemy
+
+import time
+
 Enemy = 0
 Spawn = 1
 Escape = 2
 Tile = 3
 
 
+inventory = []
 
 
+def Enemy():
+	"""fighting an enemy"""
+	enemy_hp = 25
+	while (enemy_hp >= 1):
+		atk = input("Attacks: \n Slash \n Kick \n")
+		if atk == "Slash":
+			enemy_hp -= 5
+			print(enemy_hp)
+		elif atk == "yeet":
+			enemy_hp -= 5000
+		elif atk == "Kick":
+			enemy_hp -= 6
+			print(enemy_hp)
+		else:
+			print("Your attack failed")	  
+	if enemy_hp <= 0:
+		print("You've killed the enemy \nYou got a object")
+		inventory.append("object")
+		main()
 
 x=1
 y=1
 Loop = True
 
-map = [
+
+playermap = [
 	"Tile","Enemy","Tile","Enemy",
 	"Escape","Spawn","Tile","Tile",
 	"Tile","Enemy","Enemy","Tile",
 	"Enemy","Tile","Enemy","Enemy"
+]
+
+
+map = [
+	[3,0,3,0],
+	[2,1,3,3],
+	[3,0,0,3],
+	[0,3,0,0]
 ]
 
 
@@ -63,11 +94,13 @@ def Movement():
 		# description of the rooms
 		if room.userpos == 0:
 			print("You've found an enemy")
-			enemy.enemy()
+			Enemy()
 		elif room.userpos == 1:
 			print("Spawn room")
 		elif room.userpos == 2:
 			print("You've successfully escaped")
+			time.sleep(172800)
+			print("Why is this code still running?")
 			global Loop
 			Loop = False
 
@@ -83,8 +116,9 @@ room = Room(0, 0)
 
 
 def Map1():
-	place = map
-	with open("map.txt", "a") as file:
+	"""prints out the map to 'map.txt' """
+	place = playermap
+	with open("map.txt", "w") as file:
 		file.write(f"{place}\n")
 
 
@@ -105,9 +139,10 @@ def main():
 	elif inp == "map":
 		"""prints the map to map.txt"""
 		Map1()
-		print("map printed to 'map.txt'")
+		print("\nmap printed to 'map.txt'\n")
+		main()
 	elif inp == "inventory":
-		print(enemy.inventory)
+		print(inventory)
 	else:
 		print("that's not a valid action")
 
