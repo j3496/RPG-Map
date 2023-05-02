@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.texinfo4
     pkgs.python310Full
     pkgs.replitPackages.prybar-python310
     pkgs.replitPackages.stderred

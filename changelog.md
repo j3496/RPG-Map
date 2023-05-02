@@ -14,3 +14,15 @@ added - enemies can die
 added - player inventory
 added - a new way to quit
 added - a way to see the map
+
+v1.2
+Name: RPG - MAP
+update - the definitions for the functions
+moved - the inventory to a seperate file
+fixed - the indentation
+added - something after you escape
+moved - enemy to a seperate file
+added - a try, except, else, finally to the enemy file
+added - enemys.txt
+changed - the way things are added to the inventory
+added - a try, except, else to the main file so that errors won't show up in the console
