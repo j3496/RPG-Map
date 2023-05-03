@@ -21,8 +21,11 @@ update - the definitions for the functions
 moved - the inventory to a seperate file
 fixed - the indentation
 added - something after you escape
+
+v1.3
 moved - enemy to a seperate file
 added - a try, except, else, finally to the enemy file
 added - enemys.txt
 changed - the way things are added to the inventory
 added - a try, except, else to the main file so that errors won't show up in the console
+moved - the try, except, else from the enemy file into the Enemy function

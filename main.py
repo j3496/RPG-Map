@@ -1,6 +1,6 @@
 # Made by Joel
 # CS 30
-#
+#RPG game
 #
 
 import Inventory
@@ -11,8 +11,6 @@ Enemy = 0
 Spawn = 1
 Escape = 2
 Tile = 3
-
-inventory = []
 
 
 def Enemy():
@@ -32,7 +30,7 @@ def Enemy():
 			print("Your attack failed")
 	if enemy_hp <= 0:
 		print("You've killed the enemy \nYou got a object")
-		inventory.append("object")
+		Inventory.inventory.append("object")
 		main()
 
 
@@ -41,10 +39,8 @@ y = 1
 Loop = True
 
 playermap = [
-	"Tile", "Enemy", "Tile", "Enemy",
-	"Escape", "Spawn", "Tile", "Tile",
-	"Tile","Enemy", "Enemy", "Tile",
-	"Enemy","Tile", "Enemy", "Enemy"
+ "Tile", "Enemy", "Tile", "Enemy", "Escape", "Spawn", "Tile", "Tile", "Tile",
+ "Enemy", "Enemy", "Tile", "Enemy", "Tile", "Enemy", "Enemy"
 ]
 
 map = [[3, 0, 3, 0], [2, 1, 3, 3], [3, 0, 0, 3], [0, 3, 0, 0]]
@@ -94,7 +90,7 @@ def Movement():
 			print("Spawn room")
 		elif room.userpos == 2:
 			print("You've successfully escaped")
-			input ("")
+			input("")
 			time.sleep(31536000)
 			print("Why is this code still running?")
 			global Loop
@@ -142,13 +138,16 @@ def main():
 		main()
 	elif inp == "inventory":
 		print(Inventory.Inv())
+		main()
 	else:
 		print("that's not a valid action")
+
 
 try:
 	main()
 except:
 	with open("error.txt", "w") as file:
-		file.write("\nError")
+		file.write("Error\n")
 else:
-	print("No errors")
+	with open("error.txt", "w") as file:
+		file.write("No errors\n")

@@ -1,4 +1,10 @@
+# Made by Joel
+# CS 30
+#RPG game
+#
+
 import main
+
 
 def Attack():
 	# the attack menu
@@ -26,7 +32,7 @@ def Attack():
 
 
 def Defend():
-	print("Block")
+	print("Block \n Guard")
 	Defend1 = input("")
 	if Defend1 == "Block":
 		print("You blocked the attack")
@@ -37,13 +43,10 @@ def Defend():
 	else:
 		print("that's not a valid defence")
 		menu()
-		
+
 
 def Run():
 	print("You escaped successfully")
-
-
-
 
 
 def menu():
