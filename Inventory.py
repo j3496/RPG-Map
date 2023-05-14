@@ -11,4 +11,4 @@ def Inv():
 
 
 def pick():
-	inventory.append("reward")
+	inventory.append("Holy hand grenade")

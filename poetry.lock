@@ -333,6 +333,14 @@ docs = ["furo (>=2022.12.7)", "proselint (>=0.13)", "sphinx-autodoc-typehints (>
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest-cov (>=4)", "pytest-mock (>=3.10)", "pytest (>=7.2)"]
 
 [[package]]
+name = "playsound"
+version = "1.3.0"
+description = "Pure Python, cross platform, single function module with no dependencies for playing sounds."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pluggy"
 version = "1.0.0"
 description = "plugin and hook calling mechanisms for python"
@@ -348,6 +356,14 @@ dev = ["tox", "pre-commit"]
 name = "protobuf"
 version = "4.21.12"
 description = ""
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "pycairo"
+version = "1.23.0"
+description = "Python interface for cairo"
 category = "main"
 optional = false
 python-versions = ">=3.7"
@@ -599,7 +615,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "5fc7017053bcf7df0b0a1d2be11a4f3a6a1d2ee7cad622239ee97183b5182f21"
+content-hash = "a01f3f6d696479b8d96162c555e74bee8ab771a79507f3d01d66847671b58c1b"
 
 [metadata.files]
 aiohttp = []
@@ -631,8 +647,10 @@ packaging = []
 parso = []
 passlib = []
 platformdirs = []
+playsound = []
 pluggy = []
 protobuf = []
+pycairo = []
 pycparser = []
 pycryptodomex = []
 pyflakes = []

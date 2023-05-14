@@ -12,6 +12,17 @@ Spawn = 1
 Escape = 2
 Tile = 3
 
+x = 1
+y = 1
+Loop = True
+
+playermap = [
+ "Tile", "Enemy", "Tile", "Enemy", "Escape", "Spawn", "Tile", "Tile", "Tile",
+ "Enemy", "Enemy", "Tile", "Enemy", "Tile", "Enemy", "Enemy"
+]
+
+map = [[3, 0, 3, 0], [2, 1, 3, 3], [3, 0, 0, 3], [0, 3, 0, 0]]
+
 
 def Enemy():
 	"""fighting an enemy"""
@@ -30,20 +41,8 @@ def Enemy():
 			print("Your attack failed")
 	if enemy_hp <= 0:
 		print("You've killed the enemy \nYou got a object")
-		Inventory.inventory.append("object")
+		Inventory.pick()
 		main()
-
-
-x = 1
-y = 1
-Loop = True
-
-playermap = [
- "Tile", "Enemy", "Tile", "Enemy", "Escape", "Spawn", "Tile", "Tile", "Tile",
- "Enemy", "Enemy", "Tile", "Enemy", "Tile", "Enemy", "Enemy"
-]
-
-map = [[3, 0, 3, 0], [2, 1, 3, 3], [3, 0, 0, 3], [0, 3, 0, 0]]
 
 
 def Exit():
@@ -90,7 +89,9 @@ def Movement():
 			print("Spawn room")
 		elif room.userpos == 2:
 			print("You've successfully escaped")
-			input("")
+			enter = input("Hit Enter to print your inventory")
+			if enter == "":
+				Inventory.Inv()
 			time.sleep(31536000)
 			print("Why is this code still running?")
 			global Loop
