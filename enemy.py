@@ -49,18 +49,22 @@ def Enemy():
 				else:
 					print("Your attack failed")
 			if player_hp <= 0:
+				# The player dies
 				print("You Died")
 				time.sleep(86400)
 			elif enemy_hp <= 0:
+				# The enemy dies
 				print("You've killed the enemy \nYou got a object")
 				input("press enter to continue")
 				Inventory.pick()
 				return
 	except:
+		# tells you there's an error
 		print("There was an error running the 'enemy' code")
 	else:
 		print("\n \n")
 	finally:
+		# prints the inventory and that the file worked to "enemys.txt"
 		with open("enemys.txt", "w") as file:
 			file.write("The enemy file worked\n")
 		with open("enemys.txt", "a") as file:

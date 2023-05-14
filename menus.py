@@ -1,13 +1,12 @@
 # Made by Joel
-# CS 30
-#RPG game
-#
+## CS 30
+## RPG game
 
 import main
 
 
 def Attack():
-	# the attack menu
+	"""The attack menu"""
 	print("Return to main menu")
 	print("Return")
 	print("Which attack do you want to use")
@@ -32,6 +31,7 @@ def Attack():
 
 
 def Defend():
+	"""The defence menu"""
 	print("Block \n Guard")
 	Defend1 = input("")
 	if Defend1 == "Block":
@@ -50,7 +50,7 @@ def Run():
 
 
 def menu():
-	# the main menu
+	"""The main menu"""
 	print("Attack")
 	print("Defend")
 	print("Run Away")

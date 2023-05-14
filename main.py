@@ -1,7 +1,6 @@
 # Made by Joel
-# CS 30
-#RPG game
-#
+## CS 30
+## RPG game
 
 import Inventory
 import enemy
@@ -99,7 +98,7 @@ def Movement():
 
 
 class Room(object):
-
+	"""Checks where the user is"""
 	def __init__(self, x=4, y=4):
 		self.userpos = map[x][y]
 		self.x = x
@@ -122,6 +121,7 @@ def main():
 	 "To move type 'move' \n to access your inventory type 'inventory' \n you can quit the game at any time by pressing Ctrl + c \n To see the map type map "
 	)
 	if inp == "move":
+		# choose the movement menu
 		Movement()
 	elif inp == "exit":
 		try:
@@ -133,11 +133,12 @@ def main():
 			print("\n")
 			exit()
 	elif inp == "map":
-		"""prints the map to map.txt"""
+		# Prints the map to map.txt
 		Map1()
 		print("\nmap printed to 'map.txt'\n")
 		main()
 	elif inp == "inventory":
+		# Prints the current inventory
 		print(Inventory.Inv())
 		main()
 	else:
@@ -145,10 +146,13 @@ def main():
 
 
 try:
+	# checks the "main" function for errors
 	main()
 except:
+	# prints any errors to "error.txt"
 	with open("error.txt", "w") as file:
 		file.write("Error\n")
 else:
+	# Prints that there were no errors to "error.txt"
 	with open("error.txt", "w") as file:
 		file.write("No errors\n")
